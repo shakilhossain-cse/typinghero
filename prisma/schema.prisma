@@ -48,14 +48,16 @@ model Session {
 }
 
 model User {
-    id            String    @id @default(cuid())
+    id            String     @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?    @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
-    role          String    @default("user")
+    role          String     @default("user")
+    Fregment      Fragment[]
+    Categories    Category[]
 }
 
 model VerificationToken {
@@ -64,4 +66,24 @@ model VerificationToken {
     expires    DateTime
 
     @@unique([identifier, token])
+}
+
+model Fragment {
+    id         String   @id @default(cuid())
+    userId     String
+    user       User     @relation(fields: [userId], references: [id])
+    categoryId String
+    category   Category @relation(fields: [categoryId], references: [id])
+    text       String
+    name       String
+    createdAt  DateTime @default(now())
+}
+
+model Category {
+    id       String     @id @default(cuid())
+    isShared Boolean?   @default(false)
+    name     String
+    userId   String
+    user     User       @relation(fields: [userId], references: [id])
+    fregments Fragment[]
 }
