@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div>
       <Link href="/">
@@ -10,4 +10,3 @@ const Logo = () => {
   );
 };
 
-export default Logo;

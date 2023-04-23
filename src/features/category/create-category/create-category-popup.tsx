@@ -1,4 +1,4 @@
-import { Popup } from "@/ui-kit/popup";
+import { Popup } from "@/ui-kit";
 import React, { useState } from "react";
 import { useCreateCategory } from "./use-create-category";
 

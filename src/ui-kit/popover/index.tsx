@@ -25,6 +25,7 @@ export const Popover: React.FC<PopoverProps> = ({
     modifiers: [{ name: "arrow" }],
     placement,
   });
+  
   return (
     <Portal>
       <ClickOutside

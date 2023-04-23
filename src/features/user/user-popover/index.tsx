@@ -1,4 +1,4 @@
-import { Popover } from "@/ui-kit/popover";
+import { Popover } from "@/ui-kit";
 import { useState } from "react";
 
 export const UserPopover: React.FC<{

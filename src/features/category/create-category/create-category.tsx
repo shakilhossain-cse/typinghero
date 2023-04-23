@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { useCallback, useState } from "react";
-import { useIsAuthed } from "@/features/user/lib";
+import { useIsAuthed } from "@/features/user";
 import { CreateCategoryPopup } from "./create-category-popup";
 
 export const CreateCategory = () => {

@@ -1,4 +1,4 @@
-import { type Option, Select } from "@/ui-kit/select";
+import { type Option, Select } from "@/ui-kit";
 import { api } from "@/utils/api";
 import { useState } from "react";
 
