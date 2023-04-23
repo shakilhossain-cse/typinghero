@@ -5,7 +5,7 @@ import { Popover } from "../popover";
 
 export interface Option {
   label: string;
-  id: number;
+  id: string;
 }
 interface SelectProps {
   options: Option[];
@@ -13,7 +13,7 @@ interface SelectProps {
   onSelect: (option: Option) => void;
   emptyLabel?: string;
   className?: string;
-  renderOption?: (label: string, fragmentId: number) => React.ReactElement;
+  renderOption?: (label: string, fragmentId: string) => React.ReactElement;
 }
 export const Select: React.FC<SelectProps> = ({
   options,

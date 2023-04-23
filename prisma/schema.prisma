@@ -57,7 +57,7 @@ model User {
     sessions           Session[]
     role               String     @default("user")
     Categories         Category[]
-    selectedCategoryId String
+    selectedCategoryId String     @default("")
 }
 
 model VerificationToken {
