@@ -1,6 +1,7 @@
-import { UserPopover } from "../user-popover";
+
 import { calcAvatarUrl, calcUsername } from "../lib";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { UserPopover } from "../user-popover";
 
 export const UserWidget = () => {
   const { data: sessionData } = useSession();

@@ -4,3 +4,4 @@ export * from "./popup";
 export * from "./portal";
 export * from "./select";
 export * from "./logo";
+export * from "./textarea";
