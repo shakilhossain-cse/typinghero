@@ -1,13 +1,12 @@
 import { CreateCategory, SelectCategory } from "@/features/category";
+import { TypingWidget } from "@/features/typeing/widget";
 import { UserWidget } from "@/features/user";
 import { Logo } from "@/ui-kit";
-import { api } from "@/utils/api";
 
 import { type NextPage } from "next";
 import Head from "next/head";
 
 const Home: NextPage = () => {
-  const selectedCategory = api.category.getSelected.useQuery().data;
   return (
     <>
       <Head>
@@ -23,8 +22,8 @@ const Home: NextPage = () => {
           </div>
           <UserWidget />
         </div>
-        <pre className="container mx-auto ml-20 flex flex-1 flex-col items-center justify-center space-y-10">
-          {(JSON.parse(selectedCategory?.fragments || "[]") as string[])[0]}
+        <pre className="container mx-auto my-20 flex flex-1 flex-col items-center justify-center space-y-10">
+          <TypingWidget />
         </pre>
       </main>
     </>

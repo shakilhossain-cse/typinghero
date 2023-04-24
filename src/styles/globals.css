@@ -39,7 +39,7 @@ html {
     py-5 caret-gray-800 outline-none focus:border-gray-500 active:border-gray-500;
   }
   .main-input-mask {
-    @apply input-primary font-JetBrains absolute top-0 z-0 h-full w-[100%] text-xl font-bold;
+    @apply input-primary absolute top-0 z-0 h-full w-[100%] text-xl font-bold;
   }
   .button-outline {
     @apply mt-4 inline-flex rounded border-2 border-green-400 py-3 px-6 font-semibold

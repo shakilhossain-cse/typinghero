@@ -12,7 +12,7 @@ export const FragmentFrom: React.FC<IFragmentFormProps> = ({
   value,
 }) => {
     return(<div className="relative">
-        <button className="right-4 top-4 z-10 absolute">
+        <button className="right-4 top-4 z-10 absolute" onClick={onDelete}>
             <Image src={'/img/remove.svg'} alt="delete" width={20} height={20}/>
         </button>
         <TextArea onChange={onChange} value={value} placeholder="Type your fragment here"/>
