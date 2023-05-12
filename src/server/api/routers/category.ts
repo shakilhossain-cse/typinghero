@@ -1,11 +1,14 @@
 import { z } from "zod";
 
-import { createTRPCRouter, protectedProcedure } from "@/server/api/trpc";
+import {
+  createTRPCRouter,
+  protectedProcedure,
+} from "@/server/api/trpc";
 
 export const categoryRouter = createTRPCRouter({
   getAll: protectedProcedure.query(async ({ ctx }) => {
     return await ctx.prisma.category.findMany({
-      where: { userId: ctx.session.user.id },
+      // where: { userId: ctx.session.user.id },
       orderBy: { id: "asc" },
     });
   }),

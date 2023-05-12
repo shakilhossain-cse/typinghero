@@ -13,7 +13,6 @@ export const FirstLine: React.FC<FirstLineProps> = React.memo(
     return (
       <pre className={`text-xl font-bold text-gray-800`}>
         <span className={"text-gray-200"}>{finishedPart}</span>
-
         <span className={"relative"}>
           <span
             className={"absolute left-0 bottom-0 w-2 border border-black"}

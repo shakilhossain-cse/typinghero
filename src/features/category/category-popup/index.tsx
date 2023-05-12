@@ -30,6 +30,31 @@ export const CategoryPopup: React.FC<CategoryPopupProps> = ({
   }, [category?.fragments]);
 
   const { createMutation, updateMutation } = useCategoryMutations(onClose);
+
+  const isEmptyArray = (arr: string[]) => {
+    return arr.length === 0 ? false : !arr.some((str) => str.trim() === "");
+  };
+
+  const handelCategory = () => {
+    if (!isEmptyArray(fragments)) {
+      return;
+    }
+    if (typeof categoryId === "string" && category) {
+      updateMutation.mutate({
+        name,
+        categoryId,
+        fragments: JSON.stringify(fragments),
+      });
+    } else {
+      createMutation.mutate({
+        name,
+        fragments: JSON.stringify(fragments),
+      });
+    }
+    setName("");
+    setFragments([]);
+  };
+
   return (
     <Popup onClose={onClose} isOpened={isOpened}>
       <div className="popup-box">
@@ -70,22 +95,7 @@ export const CategoryPopup: React.FC<CategoryPopupProps> = ({
         </button>
         <button
           disabled={!name}
-          onClick={() => {
-            if (typeof categoryId === "string" && category) {
-              updateMutation.mutate({
-                name,
-                categoryId,
-                fragments: JSON.stringify(fragments),
-              });
-            } else {
-              createMutation.mutate({
-                name,
-                fragments: JSON.stringify(fragments),
-              });
-            }
-            setName("");
-            setFragments([]);
-          }}
+          onClick={handelCategory}
           className="button-outline mt-10"
         >
           Save Category

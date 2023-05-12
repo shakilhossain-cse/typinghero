@@ -30,7 +30,6 @@ function getEscapedText(text: string): string {
   
       if (!match || i === inputText.length - 1) {
         const idx = !match ? i : i + 1;
-  
         return getReturnValue(
           inputText.slice(0, idx),
           currentLine.slice(idx, currentLine.length),

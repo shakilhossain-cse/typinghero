@@ -8,6 +8,7 @@ export interface Option {
   id: string;
 }
 interface SelectProps {
+  icon?: string;
   options: Option[];
   value: Option | null;
   onSelect: (option: Option) => void;
@@ -16,6 +17,7 @@ interface SelectProps {
   renderOption?: (label: string, fragmentId: string) => React.ReactElement;
 }
 export const Select: React.FC<SelectProps> = ({
+  icon,
   options,
   value,
   onSelect,
@@ -46,7 +48,13 @@ export const Select: React.FC<SelectProps> = ({
             "max-w-[200px] overflow-hidden text-ellipsis whitespace-nowrap"
           }
         >
-          {value ? value.label : emptyLabel}
+          {value?.label.length ? (
+            value.label
+          ) : icon ? (
+            <Image src={icon} width={20} height={20} alt={"select"} />
+          ) : (
+            emptyLabel
+          )}
         </span>
         <Image
           className={

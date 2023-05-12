@@ -34,6 +34,8 @@ export const TypingWidget = () => {
     },
     currentLineText
   );
+  console.log(currentLineText);
+
   return (
     <div className="mx-auto mt-20 flex w-[960px] flex-col gap-4">
       {typingInput}

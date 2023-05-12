@@ -1,5 +1,6 @@
 import { CreateCategory, SelectCategory } from "@/features/category";
-import { TypingWidget } from "@/features/typeing/widget";
+import { SelectTime } from "@/features/time";
+import { TypingWidget } from "@/features/typing/widget";
 import { UserWidget } from "@/features/user";
 import { Logo } from "@/ui-kit";
 
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
           <div className="flex items-center gap-2">
             <CreateCategory />
             <SelectCategory />
+            <SelectTime />
           </div>
           <UserWidget />
         </div>
